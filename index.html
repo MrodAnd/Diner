@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Diners in QN and the BX</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="sidebar">
+        <div class="header">
+            <span class="pizza-emoji">🍕</span>
+            <h1>Diners in QN and the BX</h1>
+        </div>
+        <p>Find your Diner in the Bronx or Queens. 24 hour diners shown in green:</p>
+        <p><strong>Click mark for name</strong></p>
+        <div class="legend">
+            <div>
+                <span class="legend-key" style="background-color: red;"></span>
+                <span>Only Daytime</span>
+            </div>
+            <div>
+                <span class="legend-key" style="background-color: green;"></span>
+                <span>24/7</span>
+            </div>
+            <div>
+                <span class="legend-key" style="background-color: yellow;"></span>
+                <span>Fulltime on Weekends</span>
+            </div>
+        </div>
+        <a class="source-code-link" href="https://github.com/MrodAnd/Mapbox">Source Code</a>
+    </div>
+    <div id="map-container"></div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
+    <script src="js/pizza-data.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
