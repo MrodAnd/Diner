@@ -3,36 +3,35 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibXJvZGEiLCJhIjoiY2x1dHl3cXM5MDRmZTJscDZuczk1MGR0MyJ9.b4OLZlubx4b5Hc19pGZRpQ';
 
 var mapOptions = {
-    container: 'map-container', // container ID
-    style: 'mapbox://styles/mapbox/dark-v11', // dark basemap
-    center: [-74.05, 40.68], // starting position [lng, lat]
-    zoom: 10.4, // starting zoom, 
+    container: 'map-container',
+    style: 'mapbox://styles/mapbox/satellite-v9', 
+    center: [-74.05, 40.68], 
+    zoom: 10.4,  
 }
 
-// instantiate the map
 const map = new mapboxgl.Map(mapOptions);
 
-// add a navitation control
+// navitation control
 const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-right');
 
-// loop over the dinerData array to make a marker for each record
+// dinerData array
 dinerData.forEach(function (dinerRecord) {
 
     var color
 
     // use if statements to assign colors based on dinerData.program
     if (dinerRecord.hours === 'N') {
-        color = '#8dd6a1'
+        color = '#a30a14'
     }
     if (dinerRecord.hours === 'Y') {
-        color = '#d67ea6'
+        color = '#046123'
     }
     if (dinerRecord.hours === 'W') {
-        color = '#1f8f39'
+        color = '#e6db0b'
     }
 
-    // create a popup to attach to the marker
+    // popup
     const popup = new mapboxgl.Popup({
         offset: 40,
         anchor: 'bottom'
@@ -40,7 +39,7 @@ dinerData.forEach(function (dinerRecord) {
         `${dinerRecord.Diner}`
 );
 
-// create a marker, set the coordinates, add the popup, add it to the map
+// coordinates
 new mapboxgl.Marker({
     scale: 0.5,
     color: color
